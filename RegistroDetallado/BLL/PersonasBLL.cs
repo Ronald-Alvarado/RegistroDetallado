@@ -40,7 +40,8 @@ namespace RegistroDetallado.BLL
 
             try
             {
-                var Anterior = db.Personas.Find(persona.PersonaId);
+                var Anterior = PersonasBLL.Buscar(persona.PersonaId);
+                //var Anterior = db.Personas.Find(persona.PersonaId);
 
                 foreach(var item in Anterior.Telefonos)
                 {
