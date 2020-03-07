@@ -214,6 +214,7 @@ namespace RegistroDetallado
                     MessageBox.Show("No existe en la database");
                     return;
                 }
+
                 paso = PersonasBLL.Modificar(p);
             }
 
