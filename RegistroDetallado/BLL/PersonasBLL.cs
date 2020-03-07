@@ -45,11 +45,11 @@ namespace RegistroDetallado.BLL
 
                 foreach(var item in Anterior.Telefonos)
                 {
-                    if (!Anterior.Telefonos.Exists(d => d.Id == item.Id))
+                    if (!persona.Telefonos.Exists(d => d.Id == item.Id))
                         db.Entry(item).State = EntityState.Deleted;
                 }
 
-                foreach (var item in Anterior.Telefonos)
+                foreach (var item in persona.Telefonos)
                 {
                     var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
                         db.Entry(item).State = estado;

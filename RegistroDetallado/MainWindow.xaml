@@ -22,7 +22,15 @@
         <Label Content="Nombre" Margin="25,63,25,96"/>
         <Label Content="Direccion" Margin="25,101,25,58"/>
         <Label Content="Cedula" Margin="25,139,25,20"/>
-        <TextBox x:Name="Id_Text" Grid.Column="1" Margin="10,25,10,134" Text="0" TextWrapping="Wrap"/>
+        <TextBox x:Name="Id_Text" Grid.Column="1" Margin="10,25,10,134" TextWrapping="Wrap">
+            <TextBox.Text>
+                <Binding Path="Id" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
         <TextBox x:Name="Nombre_Text" Grid.Column="1" Margin="10,63,10,96" TextWrapping="Wrap" Grid.ColumnSpan="3">
             <TextBox.Text>

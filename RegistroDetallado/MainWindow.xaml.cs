@@ -66,8 +66,9 @@ namespace RegistroDetallado
             Direccion_Text.Text = p.Direccion;
             Fecha_Text.Text = Convert.ToString(p.FechaNacimiento);
 
-            this.Detalles = p.Telefonos;
             CargarGrid();
+            this.Detalles = p.Telefonos;
+            //CargarGrid();
         }
 
         private bool Validar()
@@ -161,14 +162,15 @@ namespace RegistroDetallado
                 this.Detalles = (List<TelefonosDetalle>)DataGrid.ItemsSource;
             }
 
-            this.Detalles.Add(new TelefonosDetalle
-            {
+            this.Detalles.Add(new TelefonosDetalle(Tipo_Text.Text, Telefono_Text.Text));
+            
+            /*{
                 Id = 0,
                 PersonaId = Convert.ToInt32(Id_Text.Text),
                 TipoTelefono = Tipo_Text.Text,
                 Telefono = Telefono_Text.Text
             }
-            );
+            );*/
 
             CargarGrid();
             Telefono_Text.Focus();

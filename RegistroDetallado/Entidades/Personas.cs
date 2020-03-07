@@ -24,6 +24,14 @@ namespace RegistroDetallado.Entidades
             TipoTelefono = String.Empty;
             Telefono = String.Empty;
         }
+
+        public TelefonosDetalle(String TipoTelefono, String Telefono)
+        {
+            this.TipoTelefono = TipoTelefono;
+            this.Telefono = Telefono;
+        }
+
+
     }
 
     public class Personas
